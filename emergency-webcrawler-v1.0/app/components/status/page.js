@@ -1,11 +1,12 @@
 "use client";
 import React, { useState } from "react";
 
+
 const ScraperStatus = ({
-  totalItems,
+  scrappedItems,
   verifiedItems,
   unverifiedItems,
-  scrappedItems,
+  totalItems,
 }) => {
   const itemsPerPage = 5;
   const [currentPage, setCurrentPage] = useState(1);
@@ -47,17 +48,19 @@ const ScraperStatus = ({
       <h2 className="text-xl font-semibold mb-2">Scrapped Items</h2>
 
       <ul>
+     
         {currentItems.map((item, index) => (
+       
           <li key={index} className="mb-4 p-4 border border-gray-300 rounded">
             <strong>Accident Type:</strong> {item.accidentType}
             <br />
             <strong>Location:</strong> {item.location}
             <br />
-            <strong>Date of Occurrence:</strong> {item.date}
+            <strong>Date of Occurrence:</strong> {item.dateOfOccurance}
             <br />
-            <strong>Time:</strong> {item.time}
+            <strong>Time:</strong> {item.timeOfOcccurance}
             <br />
-            <strong>Accident Details:</strong> {item.details}
+            <strong>Accident Details:</strong> {item.accidentDetails}
             <br />
             <div className="mt-2 flex items-center">
               <button
@@ -74,7 +77,9 @@ const ScraperStatus = ({
               </button>
             </div>
           </li>
+          
         ))}
+      
       </ul>
 
       {/* Pagination */}
